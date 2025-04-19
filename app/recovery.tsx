@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
+import { MaterialIcons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const RecuperarSenha = () => {
