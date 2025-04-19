@@ -1,40 +1,55 @@
 import React from "react";
+import { Link } from "expo-router";
 import { Text, StyleSheet, TextInput, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 
-//botoes de formulario
 
-const botaoFormulario = () => {
-  const [text, nomedoUsuario] = React.useState('');
-  const [senha, senhaDoUsuario] = React.useState('');
+  //botoes de formulario hooks
 
+  const botaoFormulario = () => {
+    const [text, nomedoUsuario] = React.useState('');
+    const [senha, senhaDoUsuario] = React.useState('');
+  
+  
   //Função de click!!!
 
   function click() {
     alert(`Logged! ${text}`);
   }
+  
+<View style={styles.container}>
+  <Text>Hello</Text>
+  <Link href={"/recovery"}></Link>
+</View>
 
   return (
+
     <SafeAreaView style={styles.container}>
-        
+
+
       <TextInput
         style={styles.input}
         onChangeText={nomedoUsuario}
         value={text}
         placeholder="Usuário"
         keyboardType="default"
-        />
+      />
       <TextInput
         style={styles.input}
         onChangeText={senhaDoUsuario}
         value={senha}
         placeholder="Senha"
         keyboardType="default"
-        />
+      />
       <TouchableOpacity style={styles.botao} onPress={click}>
         <Text style={styles.texto}>Entrar</Text>
       </TouchableOpacity>
+
+
+  <View style={styles.container}>
+  <Link href={"/recovery"}>Recuperar Senha</Link>
+  </View>
 
     </SafeAreaView>
   );
@@ -43,7 +58,7 @@ const botaoFormulario = () => {
 //criando css
 
 const styles = StyleSheet.create({
-
+  
   container: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -63,7 +78,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
   },
-  
+
   botao: {
     padding: 16,
     backgroundColor: 'lightskyblue',
